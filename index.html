@@ -25,9 +25,10 @@
 
 				<section class="wrapper style1 align-left" id="first">
 					<div class="inner">
+						<!-- The Video-to-Audio (V2A) model has recently gained attention for its practical application in generating audio directly from silent videos, particularly in video/film production. However, previous methods in V2A have limited generation quality in terms of temporal synchronization and audio-visual relevance. We present \textsc{Diff-Foley}, a synchronized Video-to-Audio synthesis method with a latent diffusion model (LDM) that generates high-quality audio with improved synchronization and audio-visual relevance. We adopt contrastive audio-visual pretraining (CAVP) to learn more temporally and semantically aligned features, then train an LDM with CAVP-aligned visual features on spectrogram latent space. The CAVP-aligned features enable LDM to capture the subtler audio-visual correlation via a cross-attention module. We further significantly improve sample quality with `double guidance'. \textsc{Diff-Foley} achieves state-of-the-art V2A performance on current large scale V2A dataset. Furthermore, we demonstrate \textsc{Diff-Foley} practical applicability and generalization capabilities via downstream finetuning. -->
 						<h2>Abstract</h2>
 						<p>
-							The Video-to-Audio (V2A) model has recently gained attention for its practical application in generating audio directly from silent videos, particularly in video/film production. However, previous methods in V2A have limited generation quality in terms of temporal synchronization and audio-visual relevance. We present Diff-Foley, a synchronized Video-to-Audio synthesis method with latent diffusion model (LDM) that generate high quality audio with improved synchronization and audio-visual relevance. We adopt contrastive audio-visual pretraining (CAVP) to learn more temporally and semantically aligned features, then train an LDM with CAVP aligned visual features on spectrogram latent space. The CAVP aligned features enable LDM to capture the subtler audio-visual correlation via cross-attention module. We further significantly improve sample quality with `double guidance'. Diff-Foley achieves state-of-the-art V2A performance on current large scale V2A dataset.
+							The Video-to-Audio (V2A) model has recently gained attention for its practical application in generating audio directly from silent videos, particularly in video/film production. However, previous methods in V2A have limited generation quality in terms of temporal synchronization and audio-visual relevance. We present <strong>Diff-Foley</strong>, a synchronized Video-to-Audio synthesis method with a latent diffusion model (LDM) that generates high-quality audio with improved synchronization and audio-visual relevance. We adopt contrastive audio-visual pretraining (CAVP) to learn more temporally and semantically aligned features, then train an LDM with CAVP-aligned visual features on spectrogram latent space. The CAVP-aligned features enable LDM to capture the subtler audio-visual correlation via a cross-attention module. We further significantly improve sample quality with <i><strong>double guidance</strong> </i>. <strong>Diff-Foley</strong> achieves state-of-the-art V2A performance on current large scale V2A dataset. Furthermore, we demonstrate <strong>Diff-Foley</strong> practical applicability and generalization capabilities via downstream finetuning.
 						</p>
 					</div>
 				</section>
@@ -43,7 +44,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 					<div class="inner">
 						<h2> Evaluation   Results</h2>
 						<p>
-							For evaluation, we compared our results with SpecVQGAN and I hear your true colors(Im2wav) on VGGSound dataset according to the following metrics: FID, KL, IS. Also, we introduced another metric called Align ACC which can measure the synchronization of video and audio. The results are shown in the table below.
+							For evaluation, we compared our results with SpecVQGAN and Im2Wav on VGGSound dataset with the following metrics: FID, KL, IS. Also, we introduced another metric - Alignment Accuracy (Align Acc) to evaluate the audio synchronization and audio-visual relevance. We also show the models average inference time on generating a batch of 64 audio samples. The results are presented in the table below.
 						</p>
 						<table class="table table-striped">
 							<thead>
@@ -52,13 +53,13 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<th scope="col">IS &uarr;</th>
 									<th scope="col">FID &darr;</th>
 									<th scope="col">KL &darr;</th>
-									<th scope="col">ACC &uarr;</th>
-									<th scope="col">Time &darr;</th>
+									<th scope="col">Align Acc &uarr;</th>
+									<th scope="col">Infer. Time &darr;</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">SpecVQGAN (ResNet50 feats)</th>
+									<th scope="row">SpecVQGAN (ResNet50)</th>
 									<td>30.01</td>
 									<td><b>8.93</b></td>
 									<td>6.93</td>
@@ -74,7 +75,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<td>5.47s</td>
 								</tr> -->
 								<tr>
-									<th scope="row">Im2wav</th>
+									<th scope="row">Im2Wav</th>
 									<td>39.30</td>
 									<td>11.44</td>
 									<td><b>5.20</b></td>
@@ -83,21 +84,21 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 								</tr>
 								
 								<tr>
-									<th scope="row">Diff-Foley, classifier free guidance(ours)</th>
+									<th scope="row"><strong>Diff-Foley</strong>, Classifier Free Guidance (Ours)</th>
 									<td>53.34</td>
 									<td>11.22</td>
 									<td>6.36</td>
 									<td>92.67</td>
-									<td><b>0.38s</b></td>
+									<td><b><font color="#C01D5E">0.38s</font></b></td>
 								</tr>
 								
 								<tr>
-									<th scope="row">Diff-Foley, double guidance(ours)</th>
+									<th scope="row"><strong>Diff-Foley</strong>, Double Guidance (Ours)</th>
 									<td><b>62.37</b></td>
 									<td>9.87</td>
 									<td>6.43</td>
 									<td><b>94.05</b></td>
-									<td><b>0.38s</b></td>
+									<td><b><font color="#C01D5E">0.38s</font></b></td>
 								</tr>
 							</tbody>
 						</table>
@@ -108,8 +109,8 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 				<section class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Demos</h2>
-						<p>It is recommended to use earphones to hear the demos.</p>
-						<p>We only showed demos generated by SpecVQGAN as baseline, for Im2Wav, the results are similar.</p>
+						<p>It is recommended to use earphones to hear the demos videos and raise the volume.</p>
+						<p>We only demonstrate the SpecVQGAN baselines here. For Im2Wav, the results are similar to SpecVQGAN.</p>
 					</div>
 					<div class="items style1 small">
 						<section>
@@ -136,7 +137,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/x50I2W-Ahek_241_playing+bass+drum_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>playing drum</p>
+							<p>Playing Drum</p>
 						</section>
 						<section>
 							<span class="video">
@@ -179,7 +180,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/ijc6Ma6c4O0_90_door+slamming_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>slamming glass</p>
+							<p>Slamming Glass</p>
 						</section>
 						<section>
 							<span class="video">
@@ -222,7 +223,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/LfaD5iBSyL4_92_golf+driving_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>playing golf</p>
+							<p>Playing Golf</p>
 						</section>
 						<section>
 							<span class="video">
@@ -265,7 +266,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/BCzUvCRiBZs_20_machine+gun+shooting_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>gun shooting</p>
+							<p>Gun Shooting</p>
 						</section>
 						<section>
 							<span class="video">
@@ -309,7 +310,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/avPEH7IukYc_30_playing+tympani_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>concert</p>
+							<p>Concert</p>
 						</section>
 						<section>
 							<span class="video">
@@ -353,7 +354,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/vUn1NaMwqjg_223_underwater+bubbling_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>underwater bubbling</p>
+							<p>Underwater Bubbling</p>
 						</section>
 						<section>
 							<span class="video">
@@ -397,7 +398,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/sNTN5PhIRoM_25_bouncing+on+trampoline_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>bouncing on trampoline</p>
+							<p>Bouncing On Trampoline</p>
 						</section>
 						<section>
 							<span class="video">
@@ -440,7 +441,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/Qdr2xmK84Jo_30_pigeon,+dove+cooing_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>pidgeons cooing</p>
+							<p>Pidgeons Cooing</p>
 						</section>
 						<section>
 							<span class="video">
@@ -483,7 +484,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/dfwr8wgZU8M_40_car+passing+by_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>car start moving</p>
+							<p>Car Start Moving</p>
 						</section>
 						<section>
 							<span class="video">
@@ -527,7 +528,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/jEU8MG1w6oo_80_playing+drum+kit_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>playing drum</p>
+							<p>Playing Drum</p>
 						</section>
 						<section>
 							<span class="video">
@@ -570,7 +571,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/WJijwC4OgX8_24_bowling+impact_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>playing bowling ball</p>
+							<p>Playing Bowling Ball</p>
 						</section>
 						<section>
 							<span class="video">
@@ -614,7 +615,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/-OJzsMV1G1A_61_chopping+wood_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>chopping wood</p>
+							<p>Chopping Wood</p>
 						</section>
 						<section>
 							<span class="video">
@@ -659,7 +660,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 									<source src="videos/o7I9BknIZKY_416_playing+squash_test/0.mp4" type="video/mp4">
 								</video>
 							</span>
-							<p>playing tennis</p>
+							<p>Playing Tennis</p>
 						</section>
 						<section>
 							<span class="video">
@@ -699,7 +700,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>Downstream Finetuning</h2>
-							<p>The following are our finetuning results on the kitchen dataset.</p>
+							<p>We demonstrate the downstream finetuning results of <strong>Diff-Foley</strong> on EPIC-Kitchens datasets in the following videos.</p>
 						</div>
 						<div class="items style1 small">
 							<section>
@@ -931,11 +932,48 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 </section>
 </div>
 
+<div class="items style1 small">
+					
+	<section>
+		<span class="video">
+			<video controls class="html-video" width=100% height=auto>
+				<source src="videos/P29_04-10/0.mp4" type="video/mp4">
+			</video>
+		</span>
+		<p></p>
+	</section>
+	
+	<section>
+		<span class="video">
+			<video controls class="html-video" width=100% height=auto>
+				<source src="videos/P29_04-10/1.mp4" type="video/mp4">
+			</video>
+		</span>
+		<p></p>
+	</section>
+	<section>
+		<span class="video">
+			<video controls class="html-video" width=100% height=auto>
+				<source src="videos/P29_04-10/2.mp4" type="video/mp4">
+			</video>
+		</span>
+		<p></p>
+	</section>
+	<section>
+		<span class="video">
+			<video controls class="html-video" width=100% height=auto>
+				<source src="videos/P29_04-10/3.mp4" type="video/mp4">
+			</video>
+		</span>
+		<p></p>
+	</section>
+	</div>
+
 
 					
 
 
-				<section class="wrapper style1 align-center">
+				<!-- <section class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Citing</h2>
 						<p>If you find our work intriguing, inspiring or useful to your research, please consider citing:</p>
@@ -948,7 +986,7 @@ Im2Wav \cite{sheffer2022hear}      & CLIP  &  30 & CFG (\ding{52}) & 39.30 & 11.
 							}
 							</blockquote>						
 					</div>					
-				</section>
+				</section> -->
 
 			</div>
 
